@@ -16,7 +16,7 @@ function Curriculum() {
           experience.
         </p>
 
-        <div className="bg-brand-dark/80 hover:bg-brand-dark shadow-xl text-brand-light font-bold transition-colors duration-300 cursor-pointer rounded-full py-3 px-8">
+        <div className="bg-brand-dark hover:bg-brand-dark/80 shadow-xl shadow-brand-dark/20 text-brand-light font-bold transition-colors duration-300 cursor-pointer rounded-full py-3 px-8">
             Download Curriculum
         </div>
       </div>
