@@ -1,10 +1,15 @@
 import foto from "../assets/copertina linkedin 2-01.png";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-function ProjectCard() {
+function ProjectCard({ setProject }) {
   return (
     <div className="flex flex-col w-full group cursor-pointer">
-      <div className="relative w-full h-80 overflow-hidden rounded-2xl shadow-lg">
+      <div
+        className="relative w-full h-80 overflow-hidden rounded-2xl shadow-lg shadow-brand-dark/20"
+        onClick={() => {
+          setProject("project1");
+        }}
+      >
         <img
           src={foto}
           alt="Project Photo"
@@ -13,7 +18,7 @@ function ProjectCard() {
 
         <div className="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 backdrop-blur-[2px]">
           <p className="text-brand-light font-semibold text-xl flex items-center">
-            <span className="pe-3">View project</span> <FaExternalLinkAlt/>
+            <span className="pe-3">View project</span> <FaExternalLinkAlt />
           </p>
         </div>
       </div>

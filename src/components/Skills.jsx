@@ -119,7 +119,7 @@ function Skills() {
           </div>
 
           <div className="w-1/2">
-            <div className="bg-olive-50 border border-brand-dark/30 rounded-3xl border-dashed p-15 font-light shadow-lg">
+            <div className="bg-olive-50 border border-brand-dark/30 rounded-3xl border-dashed p-15 font-light shadow-lg shadow-brand-dark/20">
             {
                 qualifica === 'web' && <WebDevelopment/>
             }
