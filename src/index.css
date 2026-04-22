@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* FONT */
+  --font-wide: "widescreen", sans-serif;
+  --font-wide-ex: "widescreen-ex", sans-serif;
+  --font-wide-uex: "widescreen-uex", sans-serif;
+  --font-gotham: "gotham", sans-serif;
+  
+  /* COLORI */
+  --color-brand-dark: #363636;
+  --color-brand-light: #e8e8e8;
+  
+  /* ANIMAZIONI */
+  @keyframes scroll-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  --animate-infinite-scroll: scroll-x 20s linear infinite;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-gotham);
+    background: #e8e8e8;
+    color: #363636;
+  }
+}
