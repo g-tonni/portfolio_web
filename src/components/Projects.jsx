@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import ProjectCard from './ProjectCard'
+import { projects } from '../projects'
 
 function Projects() {
   const [project, setProject] = useState('')
+
+  console.log(projects)
 
   return (
     <>
@@ -17,8 +20,42 @@ function Projects() {
       </div>
 
       {project.length > 0 && (
-        <div className="fixed w-full h-screen top-0 left-0 bg-brand-dark/60 z-100 backdrop-blur-sm py-20 px-60">
+        <div className="fixed w-full h-screen top-0 left-0 bg-brand-dark/60 z-100 backdrop-blur-sm py-20 px-6 sm:px-25 md:px-15 lg:px-30 xl:px-60 2xl:px-80 3xl:px-100 4xl:px-140">
           <div className="bg-brand-light rounded-3xl w-full h-full overflow-y-auto px-10 py-5 border-5 border-y-20 border-transparent">
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
+            <p>ciao</p>
             <p>ciao</p>
             <p>ciao</p>
             <p>ciao</p>
