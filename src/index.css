@@ -1,23 +1,31 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* FONT */
-  --font-wide: "widescreen", sans-serif;
-  --font-wide-ex: "widescreen-ex", sans-serif;
-  --font-wide-uex: "widescreen-uex", sans-serif;
-  --font-gotham: "gotham", sans-serif;
-  
+  --font-wide: 'widescreen', sans-serif;
+  --font-wide-ex: 'widescreen-ex', sans-serif;
+  --font-wide-uex: 'widescreen-uex', sans-serif;
+  --font-gotham: 'gotham', sans-serif;
+
   /* COLORI */
   --color-brand-dark: #363636;
   --color-brand-light: #e8e8e8;
-  
+
   /* ANIMAZIONI */
   @keyframes scroll-x {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   --animate-infinite-scroll: scroll-x 20s linear infinite;
+
+  /* BREAKPOINT */
+  --breakpoint-3xl: 112.5rem;
+  --breakpoint-4xl: 128.125rem;
 }
 
 @layer base {

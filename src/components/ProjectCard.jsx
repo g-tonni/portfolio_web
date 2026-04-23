@@ -1,13 +1,13 @@
-import foto from "../assets/copertina linkedin 2-01.png";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import foto from '../assets/copertina linkedin 2-01.png'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 function ProjectCard({ setProject }) {
   return (
-    <div className="flex flex-col w-full group cursor-pointer">
+    <div className="flex flex-col w-full group cursor-pointer pb-10 md:pb-0">
       <div
-        className="relative w-full h-80 overflow-hidden rounded-2xl shadow-lg shadow-brand-dark/20"
+        className="relative w-full h-80 2xl:h-90 3xl:h-100 overflow-hidden rounded-2xl shadow-lg shadow-brand-dark/20"
         onClick={() => {
-          setProject("project1");
+          setProject('project1')
         }}
       >
         <img
@@ -23,15 +23,15 @@ function ProjectCard({ setProject }) {
         </div>
       </div>
 
-      <p className="py-6 font-bold text-lg">My Project</p>
+      <p className="py-4 md:py-6 font-bold md:text-lg">My Project</p>
 
       <div className="flex items-center">
-        <div className="py-2 px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-sm font-bold text-brand-dark/50">
+        <div className="py-2 px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-xs md:text-sm font-bold text-brand-dark/50">
           Web Development
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProjectCard;
+export default ProjectCard
