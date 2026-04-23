@@ -35,3 +35,12 @@
     color: #363636;
   }
 }
+
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  .cursor-pointer {
+    cursor: none !important;
+  }
+}
