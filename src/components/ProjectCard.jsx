@@ -1,13 +1,13 @@
 import foto from '../assets/copertina linkedin 2-01.png'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-function ProjectCard({ setProject }) {
+function ProjectCard({ setOpenModal }) {
   return (
     <div className="flex flex-col w-full group cursor-pointer pb-10 md:pb-0">
       <div
         className="relative w-full h-80 2xl:h-90 3xl:h-100 overflow-hidden rounded-2xl shadow-lg shadow-brand-dark/20"
         onClick={() => {
-          setProject('project1')
+          setOpenModal('project1')
         }}
       >
         <img
