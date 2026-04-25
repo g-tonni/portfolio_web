@@ -1,17 +1,16 @@
-import foto from '../assets/copertina linkedin 2-01.png'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-function ProjectCard({ setOpenModal }) {
+function ProjectCard({ setOpenModal, project }) {
   return (
     <div className="flex flex-col w-full group cursor-pointer pb-10 md:pb-0">
       <div
         className="relative w-full h-80 2xl:h-90 3xl:h-100 overflow-hidden rounded-2xl shadow-lg shadow-brand-dark/20"
         onClick={() => {
-          setOpenModal('project1')
+          setOpenModal(project.id)
         }}
       >
         <img
-          src={foto}
+          src={project.image_card}
           alt="Project Photo"
           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
@@ -23,13 +22,19 @@ function ProjectCard({ setOpenModal }) {
         </div>
       </div>
 
-      <p className="py-4 md:py-6 font-bold md:text-lg">My Project</p>
+      <p className="py-4 md:py-5 font-bold md:text-xl">{project.title}</p>
 
-      <div className="flex items-center">
-        <div className="py-2 px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-xs md:text-sm font-bold text-brand-dark/50">
-          Web Development
-        </div>
-      </div>
+     {/*  <div className="flex items-center">
+        {
+          project.categories.map((category, i) => {
+            return (
+              <div key={i} className="py-2 px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-xs lg:text-sm font-bold text-brand-dark/50 me-2 whitespace-nowrap">
+                {category}
+              </div>
+            )
+          })
+        }
+      </div> */}
     </div>
   )
 }
