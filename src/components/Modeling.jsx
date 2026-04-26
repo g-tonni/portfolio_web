@@ -1,10 +1,12 @@
 function Modeling() {
   return (
     <>
-      <p className="font-wide-ex font-semibold text-3xl pb-2">
+      <p className="font-wide-ex font-semibold text-3xl 3xl:text-4xl pb-2">
         3D Modeling & Rendering
       </p>
-      <p className="pb-10">Creating and visualizing three-dimensional worlds and objects</p>
+      <p className="pb-10">
+        Creating and visualizing three-dimensional worlds and objects
+      </p>
       {/* SKILLS */}
       <p className="font-wide-ex font-medium pb-4 text-lg">Skills</p>
       <ul className="pb-10">
@@ -43,7 +45,7 @@ function Modeling() {
         </li>
       </ul>
     </>
-  );
+  )
 }
 
 export default Modeling

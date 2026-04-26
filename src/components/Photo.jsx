@@ -1,7 +1,7 @@
 function Photo() {
   return (
     <>
-      <p className="font-wide-ex font-semibold text-3xl pb-2">
+      <p className="font-wide-ex font-semibold text-3xl 3xl:text-4xl pb-2">
         Photography & Video
       </p>
       <p className="pb-10">Capturing and producing visual content</p>
@@ -38,7 +38,7 @@ function Photo() {
         </li>
       </ul>
     </>
-  );
+  )
 }
 
 export default Photo

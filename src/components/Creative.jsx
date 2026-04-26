@@ -1,10 +1,12 @@
 function Creative() {
   return (
     <>
-      <p className="font-wide-ex font-semibold text-3xl pb-2">
+      <p className="font-wide-ex font-semibold text-3xl 3xl:text-4xl pb-2">
         Creative Coding
       </p>
-      <p className="pb-10">The intersection of code, art, and physical interaction</p>
+      <p className="pb-10">
+        The intersection of code, art, and physical interaction
+      </p>
       {/* SKILLS */}
       <p className="font-wide-ex font-medium pb-4 text-lg">Skills</p>
       <ul className="pb-10">
@@ -43,7 +45,7 @@ function Creative() {
         </li>
       </ul>
     </>
-  );
+  )
 }
 
 export default Creative

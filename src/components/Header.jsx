@@ -4,7 +4,7 @@ import qualifiche from '../assets/qualifiche.png'
 function Header() {
   return (
     <div className="w-full h-screen sm:pb-30 md:pb-50 xl:pb-70 2xl:pb-90 overflow-hidden relative">
-      <div className="w-full absolute bottom-0 left-0 -translate-y-60 md:-translate-y-80 lg:-translate-y-100">
+      <div className="w-full absolute bottom-0 left-0 -translate-y-50">
         <img
           src={nome}
           alt="Nome"

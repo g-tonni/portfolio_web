@@ -22,7 +22,7 @@ function ProjectModal({ id }) {
           {project.categories?.map((category, i) => (
             <div
               key={i}
-              className="py-2 px-4 md:px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-xs lg:text-sm font-bold text-brand-dark/50 ms-2 whitespace-nowrap"
+              className="py-2 px-4 md:px-6 bg-olive-50 border border-brand-dark/20 rounded-lg text-xs lg:text-sm font-bold text-brand-dark/50 ms-2 whitespace-nowrap"
             >
               {category}
             </div>

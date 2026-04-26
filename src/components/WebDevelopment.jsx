@@ -1,7 +1,7 @@
 function WebDevelopment() {
   return (
     <>
-      <p className="font-wide-ex font-semibold text-3xl pb-2">
+      <p className="font-wide-ex font-semibold text-3xl 3xl:text-4xl pb-2">
         Web Development
       </p>
       <p className="pb-10">Modern, high-performance full-stack solutions</p>
@@ -83,7 +83,7 @@ function WebDevelopment() {
         </li>
       </ul>
     </>
-  );
+  )
 }
 
 export default WebDevelopment

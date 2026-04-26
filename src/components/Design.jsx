@@ -1,10 +1,12 @@
 function Design() {
   return (
     <>
-      <p className="font-wide-ex font-semibold text-3xl pb-2">
+      <p className="font-wide-ex font-semibold text-3xl 3xl:text-4xl pb-2">
         Design & Motion Graphics
       </p>
-      <p className="pb-10">Visual communication, brand identity, and animation</p>
+      <p className="pb-10">
+        Visual communication, brand identity, and animation
+      </p>
       {/* SKILLS */}
       <p className="font-wide-ex font-medium pb-4 text-lg">Skills</p>
       <ul className="pb-10">
@@ -53,7 +55,7 @@ function Design() {
         </li>
       </ul>
     </>
-  );
+  )
 }
 
 export default Design
