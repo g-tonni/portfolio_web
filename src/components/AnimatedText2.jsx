@@ -3,12 +3,12 @@ import { motion, useScroll } from 'framer-motion'
 import { useRef } from 'react'
 import Word from './Word'
 
-function AnimatedText({ text }) {
+function AnimatedText2({ text }) {
   const ref = useRef(null)
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 90%', 'end 60%'],
+    offset: ['start 90%', 'end 77%'],
   })
 
   const words = text.split(/(\s+)/)
@@ -16,7 +16,7 @@ function AnimatedText({ text }) {
   return (
     <p
       ref={ref}
-      className="pb-10 md:pb-0 md:text-end md:pe-10 font-black text-3xl xl:text-5xl flex flex-wrap md:justify-end"
+      className="font-black text-3xl md:text-2xl lg:text-3xl 4xl:text-4xl"
     >
       {words.map((word, i) => {
         const start = (i / words.length) * 0.8
@@ -35,4 +35,4 @@ function AnimatedText({ text }) {
   )
 }
 
-export default AnimatedText
+export default AnimatedText2

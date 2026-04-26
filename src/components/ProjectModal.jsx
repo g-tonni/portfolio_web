@@ -14,15 +14,15 @@ function ProjectModal({ id }) {
 
   return (
     <div className="p-4">
-      <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between">
-        <p className="truncate text-4xl md:text-6xl font-wide-ex pb-8 xl:pb-0">
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between">
+        <p className="truncate text-4xl sm:text-5xl md:text-6xl font-wide-ex pb-5 lg:pb-0">
           {project.title}
         </p>
         <div className="flex items-center">
           {project.categories?.map((category, i) => (
             <div
               key={i}
-              className="py-2 px-4 md:px-6 bg-olive-50 border border-brand-dark/20 rounded-lg text-xs lg:text-sm font-bold text-brand-dark/50 ms-2 whitespace-nowrap"
+              className="py-2 px-4 md:px-6 bg-olive-50 border border-brand-dark/20 rounded-lg text-xs lg:text-sm font-bold text-brand-dark/50 me-2 md:me-0 md:ms-2 whitespace-nowrap"
             >
               {category}
             </div>
@@ -168,7 +168,7 @@ function ProjectModal({ id }) {
                       alt="Link image"
                       className="w-full h-full object-cover object-left transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-brand-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 backdrop-blur-[2px] p-5">
+                    <div className="absolute inset-0 bg-brand-dark/60 rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 backdrop-blur-[2px] p-5">
                       <p className="text-brand-light font-semibold flex items-center whitespace-pre-line">
                         <span className="pe-3">{link.invite}</span>{' '}
                         <FaExternalLinkAlt />

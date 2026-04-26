@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion, useTransform } from 'framer-motion'
 
 function Line({ text, progress, start, end }) {
