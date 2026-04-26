@@ -14,13 +14,15 @@ function ProjectModal({ id }) {
 
   return (
     <div className="p-4">
-      <div className="flex items-end justify-between">
-        <p className="text-6xl font-wide-ex">{project.title}</p>
+      <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between">
+        <p className="truncate text-4xl md:text-6xl font-wide-ex pb-8 xl:pb-0">
+          {project.title}
+        </p>
         <div className="flex items-center">
           {project.categories?.map((category, i) => (
             <div
               key={i}
-              className="py-2 px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-xs lg:text-sm font-bold text-brand-dark/50 ms-2 whitespace-nowrap"
+              className="py-2 px-4 md:px-6 bg-olive-50 border border-brand-dark/20 rounded-full text-xs lg:text-sm font-bold text-brand-dark/50 ms-2 whitespace-nowrap"
             >
               {category}
             </div>
@@ -28,13 +30,13 @@ function ProjectModal({ id }) {
         </div>
       </div>
 
-      <p className="whitespace-pre-line pt-25 font-light">
+      <p className="whitespace-pre-line pt-15 md:pt-25 font-light text-sm md:text-base">
         {project.description}
       </p>
 
       {project.media.images?.length > 0 && (
-        <div className="pt-25">
-          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-15">
+        <div className="pt-15 md:pt-25">
+          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             IMAGES
           </p>
 
@@ -68,12 +70,12 @@ function ProjectModal({ id }) {
       )}
 
       {project.media.videos.length > 1 && (
-        <div className="pt-25">
-          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-15">
+        <div className="pt-15 md:pt-25">
+          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             VIDEO
           </p>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {project.media.videos.map((video, i) => {
               return (
                 <div
@@ -96,8 +98,8 @@ function ProjectModal({ id }) {
       )}
 
       {project.media.videos.length === 1 && (
-        <div className="pt-25">
-          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-15">
+        <div className="pt-15 md:pt-25">
+          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             VIDEO
           </p>
 
@@ -115,8 +117,8 @@ function ProjectModal({ id }) {
       )}
 
       {project.media.book.length > 0 && (
-        <div className="pt-25">
-          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-15">
+        <div className="pt-15 md:pt-25">
+          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             BOOK
           </p>
 
@@ -132,8 +134,8 @@ function ProjectModal({ id }) {
       )}
 
       {project.media.overview.length > 0 && (
-        <div className="pt-25">
-          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-15">
+        <div className="pt-15 md:pt-25">
+          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             OVERVIEW
           </p>
 
@@ -149,11 +151,11 @@ function ProjectModal({ id }) {
       )}
 
       {project.links.length > 0 && (
-        <div className="pt-25">
-          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-15">
+        <div className="pt-15 md:pt-25">
+          <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             LINK
           </p>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {project.links.map((link, i) => {
               return (
                 <a href={link.link} target="_blank" rel="noopener noreferrer">

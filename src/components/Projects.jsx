@@ -27,10 +27,10 @@ function Projects() {
       </div>
 
       {openModal > 0 && (
-        <div className="fixed w-full h-screen top-0 left-0 bg-brand-dark/60 z-100 backdrop-blur-sm py-20 px-6 sm:px-25 md:px-15 lg:px-30 xl:px-60 2xl:px-80 3xl:px-100 4xl:px-140">
-          <div className="bg-brand-light rounded-3xl w-full h-full overflow-y-auto px-15 py-10 border-5 border-y-20 border-transparent relative">
+        <div className="fixed w-full h-screen top-0 left-0 bg-brand-dark/60 z-100 backdrop-blur-sm md:py-20 md:px-15 lg:px-30 xl:px-60 2xl:px-80 3xl:px-100 4xl:px-140">
+          <div className="bg-brand-light md:rounded-3xl w-full h-full overflow-y-auto px-5 md:px-15 py-5 md:py-10 border-5 border-y-5 md:border-y-20 border-transparent relative">
             <div
-              className="sticky top-0 right-0 flex justify-end text-brand-dark/70 hover:text-brand-dark transition-colors duration-200 translate-x-10 -translate-y-10"
+              className="sticky top-0 right-0 flex justify-end text-brand-dark/70 hover:text-brand-dark transition-colors duration-200 md:translate-x-10 md:-translate-y-10 pe-4 md:pe-0"
               onClick={() => {
                 setOpenModal('')
               }}
