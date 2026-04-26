@@ -4,6 +4,13 @@ import asterisco from '../assets/asterisco.png'
 function Navbar() {
   const [isVisible, setIsVisible] = useState(false)
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight - 200) {
@@ -24,7 +31,10 @@ function Navbar() {
       `}
     >
       <div className="w-full py-5 px-6 md:px-10 flex justify-between items-center text-sm md:text-base lg:text-xl font-medium">
-        <p className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer">
+        <p
+          onClick={() => scrollToSection('about')}
+          className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer"
+        >
           About
         </p>
         <img
@@ -32,7 +42,10 @@ function Navbar() {
           alt="Asterisco"
           className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 md:h-4"
         />
-        <p className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer">
+        <p
+          onClick={() => scrollToSection('skills')}
+          className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer"
+        >
           Skills
         </p>
         <img
@@ -40,15 +53,21 @@ function Navbar() {
           alt="Asterisco"
           className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 md:h-4"
         />
-        <p className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer">
-          Project
+        <p
+          onClick={() => scrollToSection('projects')}
+          className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer"
+        >
+          Projects
         </p>
         <img
           src={asterisco}
           alt="Asterisco"
           className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 md:h-4"
         />
-        <p className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer">
+        <p
+          onClick={() => scrollToSection('curriculum')}
+          className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer"
+        >
           Curriculum
         </p>
         <img
@@ -56,7 +75,10 @@ function Navbar() {
           alt="Asterisco"
           className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 md:h-4"
         />
-        <p className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer">
+        <p
+          onClick={() => scrollToSection('contact')}
+          className="hover:text-brand-dark/50 transition-colors duration-200 cursor-pointer"
+        >
           Contact
         </p>
       </div>

@@ -99,3 +99,7 @@
   width: 6px !important;
   border-radius: 5px !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
