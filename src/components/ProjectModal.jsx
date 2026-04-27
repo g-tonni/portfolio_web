@@ -54,7 +54,7 @@ function ProjectModal({ id }) {
         <p className="truncate text-4xl sm:text-5xl md:text-6xl font-wide-ex pb-5 lg:pb-0">
           {project.title}
         </p>
-        <div className="flex items-center">
+        <div className="flex items-center overflow-x-auto">
           {project.categories?.map((category, i) => (
             <div
               key={i}
