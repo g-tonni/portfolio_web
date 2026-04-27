@@ -29,16 +29,20 @@ function Contact() {
       label: 'Linkedin',
       icon: <FaLinkedin className="w-6 h-6" />,
       value: 'https://www.linkedin.com/in/giada-tonni/',
+      link: 'https://www.linkedin.com/in/giada-tonni/',
     },
     {
       label: 'GitHub',
       icon: <FaGithub className="w-6 h-6" />,
       value: 'https://github.com/g-tonni',
+      link: 'https://github.com/g-tonni',
     },
     {
       label: 'Epicode Talent Profile',
       icon: <img src={logoEpicode} className="w-6 h-6" />,
       value:
+        'https://talent.epicode.com/talent/80df17aa-43d4-4c55-b5a3-2a93ffc5cba2',
+      link:
         'https://talent.epicode.com/talent/80df17aa-43d4-4c55-b5a3-2a93ffc5cba2',
     },
     {
@@ -71,6 +75,17 @@ function Contact() {
           {items.map((el, index) => {
             const reversedIndex = items.length - 1 - index
 
+            const content = (
+              <>
+                <div className="flex items-center pb-1">
+                  <p className="text-lg font-bold pe-4">{el.label}</p>
+                  {el.icon}
+                </div>
+
+                <p className="font-light md:text-end">{el.value}</p>
+              </>
+            )
+
             return (
               <motion.div
                 key={el.label}
@@ -79,14 +94,22 @@ function Contact() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.6 }}
-                className={`flex flex-col md:items-end ${index === items.length - 1 ? 'pb-0' : 'pb-6'}`}
+                className={`flex flex-col md:items-end ${
+                  index === items.length - 1 ? 'pb-0' : 'pb-6'
+                }`}
               >
-                <div className="flex items-center pb-1">
-                  <p className="text-lg font-bold pe-4">{el.label}</p>
-                  {el.icon}
-                </div>
-
-                <p className="font-light md:text-end">{el.value}</p>
+                {el.link ? (
+                 <a
+  href={el.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex flex-col md:items-end text-inherit hover:text-brand-dark/60 transition-colors duration-200"
+>
+  {content}
+</a>
+                ) : (
+                  content
+                )}
               </motion.div>
             )
           })}
