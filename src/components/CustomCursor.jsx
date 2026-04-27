@@ -1,10 +1,31 @@
 import { useEffect, useState } from 'react'
 
+function useIsLargeScreen() {
+  const [isLarge, setIsLarge] = useState(false)
+
+  useEffect(() => {
+    const checkSize = () => {
+      setIsLarge(window.innerWidth >= 768)
+    }
+
+    checkSize()
+    window.addEventListener('resize', checkSize)
+
+    return () => window.removeEventListener('resize', checkSize)
+  }, [])
+
+  return isLarge
+}
+
 function CustomCursor() {
+  const isLarge = useIsLargeScreen()
+
   const [position, setPosition] = useState({ x: -100, y: -100 })
   const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
+    if (!isLarge) return
+
     const moveCursor = (e) => {
       requestAnimationFrame(() => {
         setPosition({ x: e.clientX, y: e.clientY })
@@ -13,6 +34,7 @@ function CustomCursor() {
 
     const handleMouseOver = (e) => {
       const target = e.target
+
       const isInteractive =
         target.closest('a') ||
         target.closest('button') ||
@@ -29,7 +51,10 @@ function CustomCursor() {
       window.removeEventListener('mousemove', moveCursor)
       window.removeEventListener('mouseover', handleMouseOver)
     }
-  }, [])
+  }, [isLarge])
+
+  // 🚫 niente cursore sotto lg
+  if (!isLarge) return null
 
   return (
     <div
