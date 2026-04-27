@@ -58,7 +58,7 @@ function Skills() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false }}
+          viewport={{ once: false, amount: 0.3}}
           className="w-full flex md:flex-col items-start md:w-1/3 lg:w-1/2 font-medium lg:text-lg overflow-x-auto mb-6 md:mb-0"
         >
           {[
@@ -107,7 +107,7 @@ function Skills() {
                 initial="initial"
                 whileInView="animate"
                 exit="exit"
-                viewport={{ once: false }}
+                viewport={{ once: false, amount: 0.3}}
               >
                 {qualifica === 'web' && <WebDevelopment />}
                 {qualifica === 'design' && <Design />}

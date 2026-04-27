@@ -78,7 +78,7 @@ function Contact() {
                 variants={item}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false }}
+                viewport={{ once: false, amount: 0.6 }}
                 className={`flex flex-col md:items-end ${index === items.length - 1 ? 'pb-0' : 'pb-6'}`}
               >
                 <div className="flex items-center pb-1">

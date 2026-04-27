@@ -7,7 +7,7 @@ function AnimatedLines({ lines }) {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 85%', 'end 30%'],
+    offset: ['start 70%', 'end 40%'],
   })
 
   return (

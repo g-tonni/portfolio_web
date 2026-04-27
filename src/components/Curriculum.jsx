@@ -40,7 +40,7 @@ function Curriculum() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false }}
+        viewport={{ once: false, amount: 0.6 }}
         className="w-full md:w-2/3 lg:w-1/2 flex flex-col items-start"
       >
         <motion.div variants={item} className="w-15">

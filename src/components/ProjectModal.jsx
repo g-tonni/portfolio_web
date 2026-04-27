@@ -2,6 +2,8 @@ import { projects } from '../projects'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -12,9 +14,43 @@ function ProjectModal({ id }) {
 
   if (!project) return null
 
+  // 🔹 Variants
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, x: 40 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+        ease: 'easeOut',
+      },
+    },
+  }
+
   return (
-    <div className="p-4">
-      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between">
+    <motion.div
+      className="p-4"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.div
+        className="flex flex-col lg:flex-row lg:items-end lg:justify-between"
+        variants={item}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.4 }}
+      >
         <p className="truncate text-4xl sm:text-5xl md:text-6xl font-wide-ex pb-5 lg:pb-0">
           {project.title}
         </p>
@@ -28,14 +64,26 @@ function ProjectModal({ id }) {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <p className="whitespace-pre-line pt-15 md:pt-25 font-light text-sm md:text-base">
+      <motion.p
+        className="whitespace-pre-line pt-15 md:pt-25 font-light text-sm md:text-base"
+        variants={item}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.4 }}
+      >
         {project.description}
-      </p>
+      </motion.p>
 
       {project.media.images?.length > 0 && (
-        <div className="pt-15 md:pt-25">
+        <motion.div
+          className="pt-15 md:pt-25"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.4 }}
+        >
           <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             IMAGES
           </p>
@@ -66,11 +114,17 @@ function ProjectModal({ id }) {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
       )}
 
       {project.media.videos.length > 1 && (
-        <div className="pt-15 md:pt-25">
+        <motion.div
+          className="pt-15 md:pt-25"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.4 }}
+        >
           <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             VIDEO
           </p>
@@ -94,11 +148,17 @@ function ProjectModal({ id }) {
               )
             })}
           </div>
-        </div>
+        </motion.div>
       )}
 
       {project.media.videos.length === 1 && (
-        <div className="pt-15 md:pt-25">
+        <motion.div
+          className="pt-15 md:pt-25"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.4 }}
+        >
           <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             VIDEO
           </p>
@@ -113,11 +173,17 @@ function ProjectModal({ id }) {
               frameBorder="0"
             ></iframe>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {project.media.book.length > 0 && (
-        <div className="pt-15 md:pt-25">
+        <motion.div
+          className="pt-15 md:pt-25"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.4 }}
+        >
           <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             BOOK
           </p>
@@ -130,11 +196,17 @@ function ProjectModal({ id }) {
               allowFullScreen
             ></iframe>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {project.media.overview.length > 0 && (
-        <div className="pt-15 md:pt-25">
+        <motion.div
+          className="pt-15 md:pt-25"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.4 }}
+        >
           <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             OVERVIEW
           </p>
@@ -147,11 +219,17 @@ function ProjectModal({ id }) {
               allowFullScreen
             ></iframe>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {project.links.length > 0 && (
-        <div className="pt-15 md:pt-25">
+        <motion.div
+          className="pt-15 md:pt-25"
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.4 }}
+        >
           <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-8 md:pb-15">
             LINK
           </p>
@@ -179,9 +257,9 @@ function ProjectModal({ id }) {
               )
             })}
           </div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   )
 }
 

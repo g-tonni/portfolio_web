@@ -2,7 +2,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 
 function ProjectCard({ setOpenModal, project }) {
   return (
-    <div className="flex flex-col w-full group cursor-pointer pb-5 md:pb-0">
+    <div className="flex flex-col w-full group cursor-pointer pb-5 md:pb-0 will-change-transform">
       <div
         className="relative w-full h-80 2xl:h-90 3xl:h-100 overflow-hidden rounded-2xl shadow-lg shadow-brand-dark/20"
         onClick={() => {
