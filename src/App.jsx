@@ -18,7 +18,7 @@ function App() {
       <Projects />
       <Curriculum />
       <Contact />
-      <div className="py-25 text-lg font-medium flex justify-center items-center">
+      <div className="py-15 md:py-25 text-lg font-medium flex justify-center items-center">
         Giada Tonni@2026
       </div>
     </>

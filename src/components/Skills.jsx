@@ -47,7 +47,7 @@ function Skills() {
   return (
     <div
       id="skills"
-      className="w-full py-20 px-6 sm:px-25 md:py-20 md:px-15 lg:py-30 lg:px-30 xl:py-30 xl:px-60 2xl:px-80 3xl:px-100 4xl:px-140"
+      className="w-full py-20 px-6 sm:px-25 md:py-20 md:px-15 lg:py-30 lg:px-30 xl:py-30 xl:px-60 2xl:px-80 3xl:px-100 4xl:px-140 5xl:px-170"
     >
       <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-20">
         SKILLS
@@ -58,7 +58,7 @@ function Skills() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.3}}
+          viewport={{ once: false, amount: 0.3 }}
           className="w-full flex md:flex-col items-start md:w-1/3 lg:w-1/2 font-medium lg:text-lg overflow-x-auto mb-6 md:mb-0"
         >
           {[
@@ -107,7 +107,7 @@ function Skills() {
                 initial="initial"
                 whileInView="animate"
                 exit="exit"
-                viewport={{ once: false, amount: 0.3}}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 {qualifica === 'web' && <WebDevelopment />}
                 {qualifica === 'design' && <Design />}

@@ -12,7 +12,7 @@ function About() {
   return (
     <div
       id="about"
-      className="w-full py-20 px-6 sm:px-25 md:py-20 md:px-15 lg:py-30 lg:px-30 xl:py-30 xl:px-60 2xl:py-30 2xl:px-80 3xl:py-30 3xl:px-100 4xl:py-30 4xl:px-140"
+      className="w-full py-20 px-6 sm:px-25 md:py-20 md:px-15 lg:py-30 lg:px-30 xl:py-30 xl:px-60 2xl:py-30 2xl:px-80 3xl:py-30 3xl:px-100 4xl:py-30 4xl:px-140 5xl:px-170"
     >
       <p className="font-wide-ex md:text-lg font-medium text-brand-dark/50 pb-20">
         ABOUT

@@ -8,7 +8,7 @@ function Header() {
         <img
           src={nome}
           alt="Nome"
-          className="w-full opacity-80 md:opacity-50 lg:opacity-30 transition-all duration-300"
+          className="w-full opacity-80 md:opacity-50 xl:opacity-30 transition-all duration-300"
         />
         <div className="flex w-max animate-infinite-scroll">
           <img
