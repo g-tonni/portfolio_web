@@ -21,7 +21,7 @@
     }
   }
 
-  --animate-infinite-scroll: scroll-x 20s linear infinite;
+  --animate-infinite-scroll: scroll-x 15s linear infinite;
 
   /* BREAKPOINT */
   --breakpoint-3xl: 112.5rem;

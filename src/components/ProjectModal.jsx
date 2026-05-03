@@ -1,6 +1,7 @@
 import { projects } from '../projects'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import SmartImage from './SmartImage'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
@@ -14,7 +15,6 @@ function ProjectModal({ id }) {
 
   if (!project) return null
 
-  // 🔹 Variants
   const container = {
     hidden: {},
     show: {
@@ -105,11 +105,7 @@ function ProjectModal({ id }) {
             {project.media.images.map((image, i) => (
               <SwiperSlide key={i}>
                 <div className="w-full aspect-video md:aspect-video overflow-hidden bg-stone-100">
-                  <img
-                    src={image}
-                    alt={`${project.title} image ${i}`}
-                    className="h-full w-full object-cover object-center"
-                  />
+                  <SmartImage src={image} alt={`${project.title} image ${i}`} />
                 </div>
               </SwiperSlide>
             ))}
@@ -236,11 +232,13 @@ function ProjectModal({ id }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {project.links.map((link, i) => {
               return (
-                <a href={link.link} target="_blank" rel="noopener noreferrer">
-                  <div
-                    key={i}
-                    className="w-full aspect-square relative rounded-2xl overflow-hidden group"
-                  >
+                <a
+                  key={i}
+                  href={link.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="w-full aspect-square relative rounded-2xl overflow-hidden group">
                     <img
                       src={link.image}
                       alt="Link image"

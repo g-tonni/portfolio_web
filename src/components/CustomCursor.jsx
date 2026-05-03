@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function useIsLargeScreen() {
   const [isLarge, setIsLarge] = useState(false)
@@ -10,7 +10,6 @@ function useIsLargeScreen() {
 
     checkSize()
     window.addEventListener('resize', checkSize)
-
     return () => window.removeEventListener('resize', checkSize)
   }, [])
 
@@ -19,16 +18,19 @@ function useIsLargeScreen() {
 
 function CustomCursor() {
   const isLarge = useIsLargeScreen()
-
-  const [position, setPosition] = useState({ x: -100, y: -100 })
+  const cursorRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     if (!isLarge) return
 
+    let rafId
+
     const moveCursor = (e) => {
-      requestAnimationFrame(() => {
-        setPosition({ x: e.clientX, y: e.clientY })
+      if (!cursorRef.current) return
+
+      rafId = requestAnimationFrame(() => {
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`
       })
     }
 
@@ -50,24 +52,22 @@ function CustomCursor() {
     return () => {
       window.removeEventListener('mousemove', moveCursor)
       window.removeEventListener('mouseover', handleMouseOver)
+      cancelAnimationFrame(rafId)
     }
   }, [isLarge])
 
-  // 🚫 niente cursore sotto lg
   if (!isLarge) return null
 
   return (
     <div
-      className={`fixed top-0 left-0 pointer-events-none z-9999 rounded-full transition-all duration-200 ease-out will-change-transform backdrop-blur-sm
+      ref={cursorRef}
+      className={`fixed top-0 left-0 pointer-events-none z-[9999] rounded-full transition-all duration-200 ease-out will-change-transform
         ${
           isHovered
             ? 'w-6 h-6 bg-brand-dark shadow-lg'
             : 'w-4 h-4 bg-brand-dark/40'
         }
       `}
-      style={{
-        transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,
-      }}
     />
   )
 }
